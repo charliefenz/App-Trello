@@ -1,11 +1,22 @@
 <form #projectForm="ngForm" (ngSubmit)="createProject(projectForm)">
-    <mat-form-field appearance="outline">
-        <mat-label>Nombre del proyecto</mat-label>
-        <input ngModel name="title" #title="ngModel" matInput type="text" placeholder="Ej. Crear un nuevo servicio" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Descripción</mat-label>
-        <input ngModel name="description" #description="ngModel" matInput type="text" placeholder="Ej. Proyecto para crear un nuevo servicio">
-    </mat-form-field>
-    <button mat-raised-button type="submit">Crear</button>
+    <div class="container">
+        <div class="row">    
+            <div class="col-12 col-sm-5">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre del proyecto</mat-label>
+                    <input ngModel name="title" #title="ngModel" matInput type="text" placeholder="Ej. Crear un nuevo servicio" required>
+                </mat-form-field>
+                <div class="alert-required" *ngIf="title.errors && (title.dirty || title.touched)">Debes introducir un nombre de proyecto</div>
+            </div>
+            <div class="col-12 col-sm-5">
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción</mat-label>
+                    <input ngModel name="description" #description="ngModel" matInput type="text" placeholder="Ej. Proyecto para crear un nuevo servicio">
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-sm-2 complete-center-child">
+                <button mat-raised-button type="submit">Crear</button>
+            </div>
+        </div>
+    </div>
 </form>
