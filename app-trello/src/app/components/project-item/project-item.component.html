@@ -3,20 +3,22 @@
         <mat-card-title>Esto es el título del proyecto</mat-card-title>
         <mat-card-subtitle>Esto será la fecha</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content class="container-fluid">
-        <div class="task-item row">
-            <div class="task-title col-9 col-sm-10 col-lg-11">Esto será el título de la tarea Esto será el título de la tarea Esto será el título de la tarea </div>
-            <mat-card-actions class="col-3 col-sm-2 col-lg-1 flex-center">
-                <button mat-icon-button aria-label="ok button">
-                    <mat-icon class="purple">check</mat-icon>
-                </button>
-                <button mat-icon-button aria-label="edit button">
-                    <mat-icon class="purple">edit</mat-icon>
-                </button>
-                <button mat-icon-button aria-label="delete button">
-                    <mat-icon class="purple">delete</mat-icon>
-                </button>
-            </mat-card-actions>
+    <mat-card-content>
+        <div class="task-item border-round">
+            <div class="task-title">Esto será el título de la tarea Esto será el título de la tarea Esto será el título de la tarea </div>
+            <div class="flex-center">
+                <mat-card-actions class="remove-bottom-margin right-margin">
+                    <button mat-icon-button aria-label="ok button" class="button-sizing">
+                        <mat-icon class="purple icon-sizing">check</mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="edit button" class="button-sizing">
+                        <mat-icon class="purple icon-sizing">edit</mat-icon>
+                    </button>
+                    <button mat-icon-button aria-label="delete button" class="button-sizing">
+                        <mat-icon class="purple icon-sizing">delete</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </div>
         </div>
     </mat-card-content>
 </mat-card>

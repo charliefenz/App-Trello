@@ -5,8 +5,8 @@
     .task-item {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         background-color: white;
-        border-radius: 5px;
         border-bottom: 2px solid purple;
         color: black;
         margin-top: 10px;
@@ -17,6 +17,7 @@
     }
 
     .task-title {
+        flex:1;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -27,4 +28,25 @@
         display: flex;
         justify-content: center; 
     }
+
+    .remove-bottom-margin {
+        margin-bottom: 0;
+    }
+
+    .button-sizing {
+        @media screen and (max-width:570px) {
+            width: 20px;        
+        }
+    }
+
+    .icon-sizing {
+        @media screen and (max-width:570px) {
+            font-size: 20px;        
+        }
+    }
+
+    .right-margin {
+        margin-right: 10px;
+    }
+
 }
