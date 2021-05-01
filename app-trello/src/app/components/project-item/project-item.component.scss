@@ -1,0 +1,30 @@
+:host {
+    .border-round {
+        border-radius: 5px;
+    }
+    .task-item {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        border-bottom: 2px solid purple;
+        color: black;
+        margin-top: 10px;
+    }
+
+    .purple {
+        color: purple;
+    }
+
+    .task-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .flex-center {
+        margin: 0;
+        display: flex;
+        justify-content: center; 
+    }
+}
