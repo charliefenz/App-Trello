@@ -8,13 +8,15 @@ import { NewProjectComponent } from './components/new-project/new-project.compon
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from './components/layout/main/main.component';
 import { ProjectItemComponent } from './components/project-item/project-item.component';
+import { ProjectListComponent } from './components/project-list/project-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewProjectComponent,
     MainComponent,
-    ProjectItemComponent
+    ProjectItemComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
