@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-project',
@@ -10,6 +11,10 @@ export class NewProjectComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  createProject(projectForm: NgForm): void {
+    console.log(projectForm.form.value.title);
   }
 
 }
