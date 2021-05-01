@@ -17,7 +17,8 @@
     }
 
     .task-title {
-        flex:1;
+        flex: 1;
+        margin-left: 10px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
