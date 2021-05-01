@@ -7,12 +7,14 @@ import { MaterialModule } from './modules/material/material.module';
 import { NewProjectComponent } from './components/new-project/new-project.component';
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from './components/layout/main/main.component';
+import { ProjectItemComponent } from './components/project-item/project-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewProjectComponent,
-    MainComponent
+    MainComponent,
+    ProjectItemComponent
   ],
   imports: [
     BrowserModule,

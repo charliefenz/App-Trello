@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-new-project',
@@ -7,14 +8,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./new-project.component.scss']
 })
 export class NewProjectComponent implements OnInit {
-  test = '';
-  constructor() { }
+
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
   }
 
   createProject(projectForm: NgForm): void {
-    console.log(projectForm.form.value.title);
+    const today = new Date();
+    this.projectService.createProject(projectForm.form.value.title, projectForm.form.value.description, today);
+    console.log(this.projectService.getProjects());
   }
 
 }
