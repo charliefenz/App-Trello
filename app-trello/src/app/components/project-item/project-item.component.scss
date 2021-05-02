@@ -12,10 +12,6 @@
         margin-top: 10px;
     }
 
-    .purple {
-        color: purple;
-    }
-
     .task-title {
         flex: 1;
         margin-left: 10px;
@@ -55,6 +51,31 @@
 
     .right-margin {
         margin-right: 10px;
+    }
+
+    .faded-background {
+       background-color: rgba(66, 66, 66, 0.7);
+    }
+
+    .mat-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .purple {
+        color: purple;
+    }
+
+    .white {
+        color: white;
+    }
+
+    .create-task {
+        margin-top: 10px;
+
+        * {
+            padding: 0;
+        }
     }
 
 }

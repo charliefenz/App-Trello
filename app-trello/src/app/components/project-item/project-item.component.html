@@ -1,8 +1,23 @@
-<mat-card class="border-round">
-    <mat-card-header>
-        <mat-card-title>Esto es el título del proyecto</mat-card-title>
-        <mat-card-subtitle>Esto será la fecha</mat-card-subtitle>
-    </mat-card-header>
+<mat-card class="border-round faded-background">
+    <div class="mat-header">
+        <div class="project-info">
+            <mat-card-title>{{project.title}}</mat-card-title>
+            <mat-card-subtitle>{{project.creationDate.toDateString()}}</mat-card-subtitle>
+        </div>
+        <div class="project-actions">
+            <mat-card-actions class="remove-bottom-margin right-margin">
+                <button mat-icon-button aria-label="ok button" class="button-sizing">
+                    <mat-icon class="white icon-sizing">check</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="edit button" class="button-sizing">
+                    <mat-icon class="white icon-sizing">edit</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="delete button" class="button-sizing">
+                    <mat-icon class="white icon-sizing">delete</mat-icon>
+                </button>
+            </mat-card-actions>
+        </div>
+    </div>
     <mat-card-content>
         <div class="task-item border-round">
             <div class="task-title">Esto será el título de la tarea Esto será el título de la tarea Esto será el título de la tarea </div>
@@ -19,6 +34,9 @@
                     </button>
                 </mat-card-actions>
             </div>
+        </div>
+        <div class="create-task">
+            <button mat-button class="button">Agregar una nueva tarea...</button>
         </div>
     </mat-card-content>
 </mat-card>
