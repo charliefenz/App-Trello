@@ -4,14 +4,16 @@
             <mat-icon class="color cancel-icon">cancel</mat-icon>
         </button>
     </div>
+    <div class="title">
+        <h2 mat-dialog-title>Crea un nuevo proyecto</h2>
+    </div>
     <div class="container">
         <div class="row">    
             <div class="col-12 col-sm-5">
                 <mat-form-field appearance="outline">
                     <mat-label>Nombre del proyecto</mat-label>
                     <input ngModel name="title" #title="ngModel" matInput type="text" placeholder="Ej. Crear un nuevo servicio" required>
-                </mat-form-field>
-                <div class="alert-required" *ngIf="title.errors && (title.dirty || title.touched)">Debes introducir un nombre de proyecto</div>
+                </mat-form-field>              
             </div>
             <div class="col-12 col-sm-5">
                 <mat-form-field appearance="outline">
@@ -21,6 +23,11 @@
             </div>
             <div class="col-12 col-sm-2 complete-center-child">
                 <button mat-raised-button type="submit" class="button">Crear</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-5">
+                <span class="alert-required" *ngIf="!formOk">Debes introducir un nombre de proyecto</span>
             </div>
         </div>
     </div>
