@@ -1,4 +1,9 @@
-<form #projectForm="ngForm" (ngSubmit)="createProject(projectForm)">
+<form #projectForm="ngForm" (ngSubmit)="createProject(projectForm)" autocomplete="off">
+    <div class="cancel-container">
+        <button mat-icon-button mat-dialog-close aria-label="cancel button" class="cancel-button">
+            <mat-icon class="color cancel-icon">cancel</mat-icon>
+        </button>
+    </div>
     <div class="container">
         <div class="row">    
             <div class="col-12 col-sm-5">
@@ -15,7 +20,7 @@
                 </mat-form-field>
             </div>
             <div class="col-12 col-sm-2 complete-center-child">
-                <button mat-raised-button type="submit">Crear</button>
+                <button mat-raised-button type="submit" class="button">Crear</button>
             </div>
         </div>
     </div>
