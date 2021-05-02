@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MainComponent } from './components/layout/main/main.component';
 import { ProjectItemComponent } from './components/project-item/project-item.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
+import { HeaderComponent } from './components/layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProjectListComponent } from './components/project-list/project-list.com
     NewProjectComponent,
     MainComponent,
     ProjectItemComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
