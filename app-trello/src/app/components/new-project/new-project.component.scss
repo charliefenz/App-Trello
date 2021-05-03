@@ -12,10 +12,6 @@
 
     }
 
-    mat-form-field {
-        width: 100%;
-    }
-
     .complete-center-child {
         display: flex;
         align-items: center;
@@ -45,5 +41,9 @@
                 font-size: 18px;
             }
         }        
+    }
+
+    .white {
+        color: white;
     }
 }
