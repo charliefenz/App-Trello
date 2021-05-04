@@ -1,0 +1,35 @@
+<form #projectForm="ngForm" (ngSubmit)="editProject(projectForm)" autocomplete="off">
+    <div class="cancel-container">
+        <button mat-icon-button mat-dialog-close aria-label="cancel button" class="cancel-button">
+            <mat-icon class="color cancel-icon">cancel</mat-icon>
+        </button>
+    </div>
+    <div class="title">
+        <h2 mat-dialog-title>{{data.title}}</h2>
+    </div>
+    <div class="container">
+        <div class="row">    
+            <div class="col-12 col-sm-5">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label class="white">Nombre del proyecto</mat-label>
+                    <input [(ngModel)]="data.title" name="title" #title="ngModel" matInput type="text" required>
+                </mat-form-field>              
+            </div>
+            <div class="col-12 col-sm-5">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label class="white">Descripción</mat-label>
+                    <input [(ngModel)]="data.description" name="description" #description="ngModel" matInput type="text">
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-sm-2 complete-center-child">
+                <button mat-raised-button type="submit" class="button">Guardar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-5">
+                <span class="alert-required" *ngIf="!formOk">Debes introducir un nombre de proyecto</span>
+            </div>
+        </div>
+    </div>
+</form>
+

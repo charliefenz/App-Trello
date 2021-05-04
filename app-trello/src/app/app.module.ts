@@ -10,6 +10,7 @@ import { MainComponent } from './components/layout/main/main.component';
 import { ProjectItemComponent } from './components/project-item/project-item.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { HeaderComponent } from './components/layout/header/header.component';
+import { EditProjectComponent } from './components/edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HeaderComponent } from './components/layout/header/header.component';
     MainComponent,
     ProjectItemComponent,
     ProjectListComponent,
-    HeaderComponent
+    HeaderComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

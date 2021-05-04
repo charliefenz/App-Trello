@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Project } from 'src/app/Models/project';
 import { Task } from 'src/app/Models/task';
 import { NgForm } from '@angular/forms';
+import { MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { EditProjectComponent } from '../edit-project/edit-project.component';
 
 @Component({
   selector: 'app-project-item',
@@ -17,7 +19,7 @@ export class ProjectItemComponent implements OnInit {
   newTaskValue = null;
   newTaskFocused = false;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -49,4 +51,12 @@ export class ProjectItemComponent implements OnInit {
     task.completed = false;
   }
 
+  editProject(project: Project): void {
+    const dialogRef = this.dialog.open(EditProjectComponent, {
+      width: '100%',
+      autoFocus: false,
+      hasBackdrop: false,
+      id: 'editProjectDialog',
+      data: project});
+  }
 }
