@@ -1,4 +1,4 @@
-<mat-card class="border-round faded-background">
+<mat-card class="faded-background">
     <div class="mat-header">
         <div class="project-info">
             <mat-card-title>{{project.title}}</mat-card-title>
@@ -19,8 +19,8 @@
         </div>
     </div>
     <mat-card-content>
-        <div class="task-item border-round">
-            <div class="task-title">Esto será el título de la tarea Esto será el título de la tarea Esto será el título de la tarea </div>
+        <div class="task-item round-border" *ngFor="let task of project.tasks">
+            <div class="task-title">{{task.name}}</div>
             <div class="flex-center">
                 <mat-card-actions class="remove-bottom-margin right-margin">
                     <button mat-icon-button aria-label="ok button" class="button-sizing">

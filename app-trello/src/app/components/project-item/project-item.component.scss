@@ -1,7 +1,4 @@
 :host {
-    .border-round {
-        border-radius: 5px;
-    }
     .task-item {
         display: flex;
         align-items: center;
@@ -10,6 +7,10 @@
         border-bottom: 2px solid purple;
         color: black;
         margin-top: 10px;
+    }
+
+    .faded-background {
+        background-color: rgba(66, 66, 66, 0.7);
     }
 
     .task-title {
@@ -51,10 +52,6 @@
 
     .right-margin {
         margin-right: 10px;
-    }
-
-    .faded-background {
-       background-color: rgba(66, 66, 66, 0.7);
     }
 
     .mat-header {
