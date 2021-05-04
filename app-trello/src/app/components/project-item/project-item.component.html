@@ -5,33 +5,23 @@
             <mat-card-subtitle>{{project.creationDate.toDateString()}}</mat-card-subtitle>
         </div>
         <div class="project-actions">
-            <mat-card-actions class="remove-bottom-margin right-margin">
-                <button mat-icon-button aria-label="ok button" class="button-sizing">
-                    <mat-icon class="white icon-sizing">check</mat-icon>
-                </button>
-                <button mat-icon-button aria-label="edit button" class="button-sizing">
-                    <mat-icon class="white icon-sizing">edit</mat-icon>
-                </button>
-                <button mat-icon-button aria-label="delete button" class="button-sizing">
-                    <mat-icon class="white icon-sizing">delete</mat-icon>
-                </button>
+            <mat-card-actions class="remove-margin">
+                <mat-icon class="white">edit</mat-icon>
             </mat-card-actions>
         </div>
     </div>
     <mat-card-content>
         <div class="task-item round-border" *ngFor="let task of project.tasks">
+            <div class="icon-button">
+                <mat-card-actions class="remove-margin">
+                    <mat-icon class="purple sizing flex-center">radio_button_unchecked</mat-icon>
+                </mat-card-actions>
+            </div>
             <div class="task-title">{{task.name}}</div>
-            <div class="flex-center">
-                <mat-card-actions class="remove-bottom-margin right-margin">
-                    <button mat-icon-button aria-label="ok button" class="button-sizing">
-                        <mat-icon class="purple icon-sizing">check</mat-icon>
-                    </button>
-                    <button mat-icon-button aria-label="edit button" class="button-sizing">
-                        <mat-icon class="purple icon-sizing">edit</mat-icon>
-                    </button>
-                    <button mat-icon-button aria-label="delete button" class="button-sizing">
-                        <mat-icon class="purple icon-sizing">delete</mat-icon>
-                    </button>
+            <div class="icon-button">
+                <mat-card-actions class="remove-margin">
+                    <!-- <mat-icon class="purple">check</mat-icon> -->
+                    <mat-icon class="purple sizing flex-center">edit</mat-icon>
                 </mat-card-actions>
             </div>
         </div>

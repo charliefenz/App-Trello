@@ -12,46 +12,37 @@
     .faded-background {
         background-color: rgba(66, 66, 66, 0.7);
     }
-
+    
     .task-title {
-        flex: 1;
-        margin-left: 10px;
-        margin-right: 10px;
+        width: 80%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    .flex-center {
+    .icon-wrap {
+        width: 10%;
         margin: 0;
+    }
+
+    .remove-margin {
+        margin: 0;
+    }
+
+    .flex-center {
         display: flex;
-        justify-content: center; 
+        align-items: center;
+        justify-content: center
     }
 
-    .remove-bottom-margin {
-        margin-bottom: 0;
+    .project-actions {
+        display: flex;
+        justify-content: right;
+        margin-right: 0;
     }
 
-    .button-sizing {
-        @media screen and (max-width: 570px) {
-            width: 30px;
-        }
-        @media screen and (min-width: 570px) {
-            width: 20px;
-        }
-    }
-
-    .icon-sizing {
-        @media screen and (max-width: 570px) {
-            font-size: 30px;
-        }  
-        @media screen and (min-width: 570px) {
-            font-size: 20px;
-        }      
-    }
-
-    .right-margin {
-        margin-right: 10px;
+    .sizing {
+        font-size: 15px;
     }
 
     .mat-header {
