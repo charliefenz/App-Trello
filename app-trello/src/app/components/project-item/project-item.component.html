@@ -14,13 +14,13 @@
         <div class="task-item round-border" *ngFor="let task of project.tasks">
             <div class="icon-button">
                 <mat-card-actions class="remove-margin">
-                    <mat-icon class="purple sizing flex-center">radio_button_unchecked</mat-icon>
+                    <mat-icon class="purple sizing flex-center" (click)="completeTask(task)" *ngIf="!task.completed">radio_button_unchecked</mat-icon>
+                    <mat-icon class="purple sizing flex-center" (click)="unCompleteTask(task)" *ngIf="task.completed">radio_button_checked</mat-icon>
                 </mat-card-actions>
             </div>
-            <div class="task-title">{{task.name}}</div>
+            <div class="task-title" [class.line-through]="task.completed">{{task.name}}</div>
             <div class="icon-button">
                 <mat-card-actions class="remove-margin">
-                    <!-- <mat-icon class="purple">check</mat-icon> -->
                     <mat-icon class="purple sizing flex-center">edit</mat-icon>
                 </mat-card-actions>
             </div>

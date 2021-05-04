@@ -16,6 +16,7 @@ export class ProjectItemComponent implements OnInit {
   newTaskPlaceholder = 'Agregar una nueva tarea...';
   newTaskValue = null;
   newTaskFocused = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -38,6 +39,14 @@ export class ProjectItemComponent implements OnInit {
     this.newTaskValue = null;
     this.newTaskFocused = false;
     this.newTaskPlaceholder = 'Agregar una nueva tarea...';
+  }
+
+  completeTask(task: Task): void {
+    task.completed = true;
+  }
+
+  unCompleteTask(task: Task): void {
+    task.completed = false;
   }
 
 }
