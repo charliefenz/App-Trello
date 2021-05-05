@@ -22,3 +22,47 @@
     border-radius: 5px;
 }
 
+.cancel-container{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    .cancel-button {
+        left: 97%;
+        @media screen and (max-width: 570px) {
+            left: 90%;
+        }
+        .cancel-icon {
+            font-size: 18px;
+        }
+    }        
+}
+
+.caret-color {
+    caret-color: rgba(255, 255, 255, 0.7);
+}
+
+.alert-required {
+    color: #dc3545;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.complete-center-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+     * {
+        display: block;
+    }
+}
+
+.dialog-button {
+    background-color: purple;
+
+    @media screen and (max-width: 576px) {
+        margin-top: 10px;
+    }
+
+}
+

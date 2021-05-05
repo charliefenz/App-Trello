@@ -14,14 +14,16 @@ export class EditProjectComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: Project, public dialog: MatDialog) { }
 
   formOk = true;
+  editTitle = this.data.title;
+  editDescription = this.data.description;
 
   ngOnInit(): void {
   }
 
   editProject(projectForm: NgForm): void {
     if (projectForm.valid) {
-      this.data.title = projectForm.form.value.title;
-      this.data.description = projectForm.form.value.description;
+      this.data.title = this.editTitle;
+      this.data.description = this.editDescription;
       console.log(this.data);
       this.formOk = true;
       this.dialog.getDialogById('editProjectDialog').close();

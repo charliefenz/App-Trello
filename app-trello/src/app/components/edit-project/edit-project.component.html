@@ -5,24 +5,24 @@
         </button>
     </div>
     <div class="title">
-        <h2 mat-dialog-title>{{data.title}}</h2>
+        <h2 mat-dialog-title>Editar proyecto {{this.data.title}}</h2>
     </div>
     <div class="container">
         <div class="row">    
             <div class="col-12 col-sm-5">
                 <mat-form-field class="full-width" appearance="outline">
                     <mat-label class="white">Nombre del proyecto</mat-label>
-                    <input [(ngModel)]="data.title" name="title" #title="ngModel" matInput type="text" required>
+                    <input class="caret-color" [(ngModel)]="editTitle" name="title" #title="ngModel" matInput type="text" required>
                 </mat-form-field>              
             </div>
             <div class="col-12 col-sm-5">
                 <mat-form-field class="full-width" appearance="outline">
                     <mat-label class="white">Descripción</mat-label>
-                    <input [(ngModel)]="data.description" name="description" #description="ngModel" matInput type="text">
+                    <input class="caret-color" [(ngModel)]="editDescription" name="description" #description="ngModel" matInput type="text">
                 </mat-form-field>
             </div>
             <div class="col-12 col-sm-2 complete-center-child">
-                <button mat-raised-button type="submit" class="button">Guardar</button>
+                <button mat-raised-button class="dialog-button" type="submit">Guardar</button>
             </div>
         </div>
         <div class="row">

@@ -3,46 +3,6 @@
         padding: 10px;
     }
 
-    .button {
-        background-color: purple;
-
-        @media screen and (max-width: 576px) {
-            margin-top: 10px;
-        }
-
-    }
-
-    .complete-center-child {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-         * {
-            display: block;
-        }
-    }
-
-    .alert-required {
-        color: #dc3545;
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    .cancel-container{
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        .cancel-button {
-            left: 97%;
-            @media screen and (max-width: 570px) {
-                left: 90%;
-            }
-            .cancel-icon {
-                font-size: 18px;
-            }
-        }        
-    }
-
     .white {
         color: white;
     }
