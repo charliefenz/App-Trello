@@ -25,10 +25,6 @@
         margin: 0;
     }
 
-    .remove-margin {
-        margin: 0;
-    }
-
     .flex-center {
         display: flex;
         align-items: center;
@@ -73,5 +69,9 @@
 
     .line-through {
         text-decoration: line-through;
+    }
+    
+    .remove-margin {
+        margin: 0;
     }
 }

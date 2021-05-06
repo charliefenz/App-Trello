@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,11 @@ import { ProjectItemComponent } from './components/project-item/project-item.com
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
+import { registerLocaleData } from '@angular/common';
+import LocaleEs from '@angular/common/locales/es-AR';
+
+registerLocaleData(LocaleEs, 'es');
 
 @NgModule({
   declarations: [
@@ -20,7 +25,8 @@ import { EditProjectComponent } from './components/edit-project/edit-project.com
     ProjectItemComponent,
     ProjectListComponent,
     HeaderComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,9 @@ import { EditProjectComponent } from './components/edit-project/edit-project.com
     MaterialModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

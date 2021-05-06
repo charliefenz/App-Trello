@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.dialog.open(NewProjectComponent, {
       width: '100%',
       autoFocus: false,
-      hasBackdrop: false,
+      hasBackdrop: true,
       id: 'newProjectDialog'});
   }
 

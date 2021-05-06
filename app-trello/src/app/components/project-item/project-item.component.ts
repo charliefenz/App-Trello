@@ -4,6 +4,8 @@ import { Task } from 'src/app/Models/task';
 import { NgForm } from '@angular/forms';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
+import { EditTaskComponent } from '../edit-task/edit-task.component';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-project-item',
@@ -41,6 +43,7 @@ export class ProjectItemComponent implements OnInit {
     this.newTaskValue = null;
     this.newTaskFocused = false;
     this.newTaskPlaceholder = 'Agregar una nueva tarea...';
+    console.log(task);
   }
 
   completeTask(task: Task): void {
@@ -55,8 +58,16 @@ export class ProjectItemComponent implements OnInit {
     const dialogRef = this.dialog.open(EditProjectComponent, {
       width: '100%',
       autoFocus: false,
-      hasBackdrop: false,
+      hasBackdrop: true,
       id: 'editProjectDialog',
       data: project});
+  }
+
+  editTask(task: Task): void {
+    const dialogRef = this.dialog.open(EditTaskComponent, {
+      autoFocus: false,
+      hasBackdrop: true,
+      id: 'editTaskDialog',
+      data: task});
   }
 }

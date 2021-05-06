@@ -9,7 +9,7 @@
     </div>
     <div class="container">
         <div class="row">    
-            <div class="col-12 col-sm-5">
+            <div class="col-12 col-sm-4">
                 <mat-form-field class="full-width" appearance="outline">
                     <mat-label class="white">Nombre del proyecto</mat-label>
                     <input ngModel class="caret-color" name="title" #title="ngModel" matInput type="text" placeholder="Ej. Crear un nuevo servicio" required>
@@ -21,12 +21,12 @@
                     <input ngModel class="caret-color" name="description" #description="ngModel" matInput type="text" placeholder="Ej. Proyecto para crear un nuevo servicio">
                 </mat-form-field>
             </div>
-            <div class="col-12 col-sm-2 complete-center-child">
+            <div class="col-12 col-sm-3 complete-center-child">
                 <button mat-raised-button type="submit" class="dialog-button">Crear</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-sm-5">
+            <div class="col-12 col-md-5">
                 <span class="alert-required" *ngIf="!formOk">Debes introducir un nombre de proyecto</span>
             </div>
         </div>

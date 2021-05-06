@@ -2,7 +2,7 @@
     <div class="mat-header">
         <div class="project-info">
             <mat-card-title>{{project.title}}</mat-card-title>
-            <mat-card-subtitle>{{project.creationDate.toDateString()}}</mat-card-subtitle>
+            <mat-card-subtitle>{{project.creationDate | date: 'longDate':'es'}}</mat-card-subtitle>
         </div>
         <div class="project-actions icon-button">
             <mat-card-actions class="remove-margin">
@@ -21,7 +21,7 @@
             <div class="task-title" [class.line-through]="task.completed">{{task.name}}</div>
             <div class="icon-button">
                 <mat-card-actions class="remove-margin">
-                    <mat-icon class="purple sizing flex-center">edit</mat-icon>
+                    <mat-icon class="purple sizing flex-center" (click)="editTask(task)">edit</mat-icon>
                 </mat-card-actions>
             </div>
         </div>
