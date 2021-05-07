@@ -26,12 +26,10 @@
             </div>
         </div>
         <div class="create-task">
-            <form autocomplete="off" #taskCreateForm="ngForm">
-                <mat-form-field floatLabel="never" class="full-width" appearance="none">
-                    <input ngModel name="newTask" #newTask="ngModel" matInput type="text" class="caret-color" [placeholder]="newTaskPlaceholder" [(ngModel)]="newTaskValue" (click)="newTaskFocus()" (keyup.enter)="createTask(taskCreateForm)">
-                    <mat-icon matSuffix class="icon-button" (click)="createTask(taskCreateForm)">add</mat-icon>
-                </mat-form-field>
-            </form>
+            <mat-form-field floatLabel="never" class="full-width" appearance="none">
+                <input ngModel name="newTask" #newTask="ngModel" matInput type="text" class="caret-color" [placeholder]="newTaskPlaceholder" [(ngModel)]="newTaskValue" (click)="newTaskFocus()" (keyup.enter)="createTask()">
+                <mat-icon matSuffix class="icon-button" (click)="createTask()">add</mat-icon>
+            </mat-form-field>
         </div>
     </mat-card-content>
 </mat-card>

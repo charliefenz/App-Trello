@@ -3,7 +3,8 @@ import { NgForm } from '@angular/forms';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Task } from 'src/app/Models/task';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
-import { formatDate } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-edit-task',
@@ -13,10 +14,11 @@ import { formatDate } from '@angular/common';
 export class EditTaskComponent implements OnInit {
 
   formOk = true;
+  dateOk = true;
   editName = this.data.name;
-  editDueDate = formatDate(this.data.dueDate, 'shortDate', 'es');
+  editDueDate = this.data.dueDate;
   editPriority = this.data.priority;
-  dueDays = Math.round((new Date(this.data.dueDate).getTime() - this.data.creationDate.getTime()) / 1000 / 60 / 60 / 24);
+  dueDays = Math.round((new Date(this.data.dueDate).getTime() - new Date().getTime()) / 1000 / 60 / 60 / 24);
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: Task, public dialog: MatDialog) { }
 
@@ -24,27 +26,16 @@ export class EditTaskComponent implements OnInit {
   }
 
   editTask(taskForm: NgForm): void {
-    if (taskForm.valid && this.checkDateOk(this.editDueDate)) {
+    if (taskForm.valid && this.editDueDate != null) {
       this.data.name = this.editName;
-      this.data.dueDate = new Date(formatDate(this.editDueDate, 'shortDate', 'es'));
+      this.data.dueDate = this.editDueDate;
       this.data.priority = this.editPriority;
       this.formOk = true;
+      this.dateOk = true;
       this.dialog.getDialogById('editTaskDialog').close();
       console.log(this.data);
-    }
-    else {
+    } else {
       this.formOk = false;
     }
   }
-
-  checkDateOk(date: string): boolean {
-    const check = new Date(date).getDate();
-    if (isNaN(check)) {
-      return false;
-    }
-    else {
-      return true;
-    }
-  }
-
 }

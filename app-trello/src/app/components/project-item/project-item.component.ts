@@ -31,9 +31,10 @@ export class ProjectItemComponent implements OnInit {
      this.newTaskFocused = true;
   }
 
-  createTask(taskCreateForm: NgForm): void {
+  createTask(): void {
+    this.newTaskValue == null ? this.newTaskValue = 'Tarea sin nombre' : this.newTaskValue = this.newTaskValue;
     const task: Task = {
-      name: taskCreateForm.form.value.newTask,
+      name: this.newTaskValue,
       priority: 1,
       creationDate: new Date(),
       dueDate: new Date(),

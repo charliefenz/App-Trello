@@ -5,9 +5,10 @@
         </button>
     </div>
     <div class="title">
-        <h2 mat-dialog-title>Editar tarea</h2>
-        <p class="remove-margin" *ngIf="dueDays<1; else duedaysBlock">Vence hoy</p>
-        <ng-template class="remove-margin" #duedaysBlock>Vence en {{dueDays}} días</ng-template>
+        <h2 mat-dialog-title class="remove-margin">Editar tarea - 
+            <span class="sutile-text" *ngIf="dueDays < 1; else duedaysBlock">Vence hoy</span>
+            <ng-template #duedaysBlock ><span class="sutile-text">Vence en {{dueDays}} días</span></ng-template>
+        </h2>
     </div>
     <div class="container">
         <div class="row">    
@@ -22,7 +23,9 @@
                     <div class="col-12 col-sm-6">
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label class="white">Vencimiento</mat-label>
-                            <input class="caret-color" [(ngModel)]="editDueDate" name="dueDate" #dueDate="ngModel" matInput type="text">
+                            <input matInput [matDatepicker]="picker" [(ngModel)]="editDueDate" name="dueDate" #dueDate="ngModel" class="caret-color" required readonly>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
                     </div>
                     <div class="col-12 col-sm-6">
@@ -39,7 +42,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-sm-5">
-                <span class="alert-required" *ngIf="!formOk">Debes introducir un nombre de Tarea y una fecha de Vencimiento válida</span>
+                <span class="alert-required" *ngIf="!formOk">Debes introducir los campos requeridos</span>
             </div>
         </div>
     </div>
