@@ -36,8 +36,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-3 complete-center-child">
-                <button mat-raised-button class="dialog-button" type="submit">Guardar</button>
+            <div class="col-12 col-sm-3 complete-center-child flex-column">
+                <div class="margin-tb-10 complete-center-child"><button mat-raised-button class="bg-color-purple" type="submit">Guardar</button></div>
+                <div class="margin-tb-10 complete-center-child"><button type="button" mat-raised-button class="bg-color-red" (click)="deleteTask()">Eliminar</button></div>
             </div>
         </div>
         <div class="row">

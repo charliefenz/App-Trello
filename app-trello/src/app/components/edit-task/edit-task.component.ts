@@ -38,4 +38,8 @@ export class EditTaskComponent implements OnInit {
       this.formOk = false;
     }
   }
+
+  deleteTask(): void {
+    this.dialog.getDialogById('editTaskDialog').close('delete');
+  }
 }

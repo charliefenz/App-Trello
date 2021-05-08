@@ -33,4 +33,8 @@ export class EditProjectComponent implements OnInit {
     }
   }
 
+  deleteProject(): void {
+    this.dialog.getDialogById('editProjectDialog').close('delete');
+  }
+
 }

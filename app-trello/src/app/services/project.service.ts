@@ -9,8 +9,9 @@ export class ProjectService {
 
   constructor() { }
 
-  createProject = (inputTitle: string, inputDescription: string, inputDate: Date ) => {
+  createProject = (inputNumber: number, inputTitle: string, inputDescription: string, inputDate: Date ) => {
     const project: Project = {
+      id: inputNumber,
       title: inputTitle,
       description: inputDescription,
       creationDate: inputDate,
