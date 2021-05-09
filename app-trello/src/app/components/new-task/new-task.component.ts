@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Project } from 'src/app/Models/project';
 import { Task } from 'src/app/Models/task';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-new-task',
@@ -16,7 +17,7 @@ export class NewTaskComponent implements OnInit {
   newTaskValue = null;
   newTaskFocused = false;
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
@@ -28,28 +29,10 @@ export class NewTaskComponent implements OnInit {
 
   createTask(): void {
     this.newTaskValue == null ? this.newTaskValue = 'Tarea sin nombre' : this.newTaskValue = this.newTaskValue;
-    const task: Task = {
-      id: this.addTaskId(),
-      name: this.newTaskValue,
-      priority: 1,
-      creationDate: new Date(),
-      dueDate: new Date(),
-      completed: false
-    };
-    this.project.tasks.push(task);
+    this.taskService.createTask(this.project.id, this.newTaskValue);
     this.newTaskValue = null;
     this.newTaskFocused = false;
     this.newTaskPlaceholder = 'Agregar una nueva tarea...';
-    console.log(task);
-  }
-
-  addTaskId(): number {
-    if (this.project.tasks.length < 1) {
-      return 1;
-    }
-    else {
-      return this.project.tasks.length + 1;
-    }
   }
 
 }

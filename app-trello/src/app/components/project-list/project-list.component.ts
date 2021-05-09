@@ -15,9 +15,8 @@ export class ProjectListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteProject(deleteId: number): void {
-    const index = this.projects.findIndex(element => element.id === deleteId);
-    this.projects.splice(index, 1);
+  deleteProject(projectId: number): void {
+    this.projectService.deleteProject(projectId);
   }
 
 }
