@@ -1,34 +1,12 @@
 :host {
-    .task-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: white;
-        border-bottom: 2px solid purple;
-        color: black;
-        margin-top: 10px;
-    }
 
     .faded-background {
         background-color: rgba(66, 66, 66, 0.7);
-    }
-    
-    .task-title {
-        width: 80%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 
     .icon-wrap {
         width: 10%;
         margin: 0;
-    }
-
-    .flex-center {
-        display: flex;
-        align-items: center;
-        justify-content: center
     }
 
     .project-actions {
@@ -37,37 +15,18 @@
         margin-right: 0;
     }
 
-    .sizing {
-        font-size: 15px;
-    }
-
     .mat-header {
         display: flex;
         justify-content: space-between;
     }
 
-    .white {
-        color: white;
-    }
-
-    .create-task {
+    .task-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        border-bottom: 2px solid purple;
+        color: black;
         margin-top: 10px;
-
-        * {
-            padding: 0;
-        }
-    }
-
-    .icon-button {
-        cursor: pointer;
-    }
-
-
-    .line-through {
-        text-decoration: line-through;
-    }
-    
-    .remove-margin {
-        margin: 0;
     }
 }

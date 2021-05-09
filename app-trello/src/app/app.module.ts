@@ -14,6 +14,8 @@ import { EditProjectComponent } from './components/edit-project/edit-project.com
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import { registerLocaleData } from '@angular/common';
 import LocaleEs from '@angular/common/locales/es-AR';
+import { TaskItemComponent } from './components/task-item/task-item.component';
+import { NewTaskComponent } from './components/new-task/new-task.component';
 
 registerLocaleData(LocaleEs, 'es');
 
@@ -26,7 +28,9 @@ registerLocaleData(LocaleEs, 'es');
     ProjectListComponent,
     HeaderComponent,
     EditProjectComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    TaskItemComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,

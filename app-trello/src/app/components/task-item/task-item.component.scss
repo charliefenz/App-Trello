@@ -1,0 +1,25 @@
+:host {
+
+    padding: 10px 0;
+
+    .sizing {
+        font-size: 1em;
+        height: 1em;
+        width: 1em;
+    }
+
+    .button-box {
+        flex: 1;
+    }
+
+    .task-title {
+        flex: 9;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .line-through {
+        text-decoration: line-through;
+    }
+}

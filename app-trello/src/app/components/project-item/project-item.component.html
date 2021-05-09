@@ -11,25 +11,10 @@
         </div>
     </div>
     <mat-card-content>
-        <div class="task-item round-border" *ngFor="let task of project.tasks">
-            <div class="icon-button">
-                <mat-card-actions class="remove-margin">
-                    <mat-icon class="purple sizing flex-center" (click)="completeTask(task)" *ngIf="!task.completed">radio_button_unchecked</mat-icon>
-                    <mat-icon class="purple sizing flex-center" (click)="unCompleteTask(task)" *ngIf="task.completed">radio_button_checked</mat-icon>
-                </mat-card-actions>
-            </div>
-            <div class="task-title" [class.line-through]="task.completed">{{task.name}}</div>
-            <div class="icon-button">
-                <mat-card-actions class="remove-margin">
-                    <mat-icon class="purple sizing flex-center" (click)="editTask(task)">edit</mat-icon>
-                </mat-card-actions>
-            </div>
-        </div>
-        <div class="create-task">
-            <mat-form-field floatLabel="never" class="full-width" appearance="none">
-                <input ngModel name="newTask" #newTask="ngModel" matInput type="text" class="caret-color" [placeholder]="newTaskPlaceholder" [(ngModel)]="newTaskValue" (click)="newTaskFocus()" (keyup.enter)="createTask()">
-                <mat-icon matSuffix class="icon-button" (click)="createTask()">add</mat-icon>
-            </mat-form-field>
+        <app-task-item *ngFor="let task of project.tasks" [task]="task" (taskSelected)="deleteTask($event)" class="task-item round-border">
+        </app-task-item>
+        <div>
+            <app-new-task [project]="project"></app-new-task>
         </div>
     </mat-card-content>
 </mat-card>

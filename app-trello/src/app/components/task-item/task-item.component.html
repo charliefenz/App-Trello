@@ -1,0 +1,8 @@
+<div class="button-box flex-center">
+    <mat-icon class="purple sizing icon-button" (click)="completeTask(task)" *ngIf="!task.completed">radio_button_unchecked</mat-icon>
+    <mat-icon class="purple sizing icon-button" (click)="unCompleteTask(task)" *ngIf="task.completed">radio_button_checked</mat-icon>
+</div>
+<div class="task-title" [class.line-through]="task.completed">{{task.name}}</div>
+<div class="button-box flex-center">
+    <mat-icon class="purple sizing icon-button" (click)="editTask(task)">edit</mat-icon>
+</div>
