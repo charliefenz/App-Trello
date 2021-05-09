@@ -2,6 +2,8 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Task } from 'src/app/Models/task';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { EditTaskComponent } from '../edit-task/edit-task.component';
+import { Project } from 'src/app/Models/project';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-task-item',
@@ -13,17 +15,20 @@ export class TaskItemComponent implements OnInit {
   @Input()
   task: Task;
 
+  @Input()
+  project: Project;
+
   @Output()
   taskSelected = new EventEmitter<number>();
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private taskService: TaskService) { }
 
   completeTask(task: Task): void {
-    task.completed = true;
+    this.taskService.completeTask(this.project.id, task.id);
   }
 
   unCompleteTask(task: Task): void {
-    task.completed = false;
+    this.taskService.unCompleteTask(this.project.id, task.id);
   }
 
   editTask(task: Task): void {
@@ -31,7 +36,7 @@ export class TaskItemComponent implements OnInit {
       autoFocus: false,
       hasBackdrop: true,
       id: 'editTaskDialog',
-      data: task});
+      data: {taskId: task.id, projectId: this.project.id}});
 
     dialogRef.afterClosed().subscribe((res) => {
         if (res === 'delete') {

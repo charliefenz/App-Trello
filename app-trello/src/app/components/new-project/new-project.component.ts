@@ -20,23 +20,13 @@ export class NewProjectComponent implements OnInit {
   createProject(projectForm: NgForm): void {
     if (projectForm.valid) {
       const today = new Date();
-      this.projectService.createProject(this.addProjectId(), projectForm.form.value.title, projectForm.form.value.description, today);
+      this.projectService.createProject(projectForm.form.value.title, projectForm.form.value.description, today);
       console.log(this.projectService.getProjects());
       this.formOk = true;
       this.dialog.getDialogById('newProjectDialog').close();
     }
     else {
       this.formOk = false;
-    }
-  }
-
-  addProjectId(): number {
-    const projects = this.projectService.getProjects();
-    if (projects.length < 1) {
-      return 1;
-    }
-    else {
-      return projects.length + 1;
     }
   }
 

@@ -18,9 +18,9 @@ export class ProjectService {
     return this.projects[index];
   }
 
-  createProject = (inputNumber: number, inputTitle: string, inputDescription: string, inputDate: Date ) => {
+  createProject = (inputTitle: string, inputDescription: string, inputDate: Date ) => {
     const project: Project = {
-      id: inputNumber,
+      id: this.addProjectId(),
       title: inputTitle,
       description: inputDescription,
       creationDate: inputDate,
@@ -42,6 +42,16 @@ export class ProjectService {
   }
 
   findProject(projectId: number): number {
-    return this.projects.findIndex(element => element.id === projectId);
+    const index = this.projects.findIndex(element => element.id === projectId);
+    return index;
+  }
+
+  addProjectId(): number {
+    if (this.projects.length < 1) {
+      return 1;
+    }
+    else {
+      return this.projects.length + 1;
+    }
   }
 }

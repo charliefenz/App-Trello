@@ -11,7 +11,7 @@
         </div>
     </div>
     <mat-card-content>
-        <app-task-item *ngFor="let task of project.tasks" [task]="task" (taskSelected)="deleteTask($event)" class="task-item round-border">
+        <app-task-item *ngFor="let task of project.tasks" [task]="task" [project]="project" (taskSelected)="deleteTask($event)" class="task-item round-border">
         </app-task-item>
         <div>
             <app-new-task [project]="project"></app-new-task>
