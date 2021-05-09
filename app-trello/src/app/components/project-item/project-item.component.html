@@ -13,11 +13,8 @@
     <mat-card-content>
         <app-task-item *ngFor="let task of project.tasks" [task]="task" (taskSelected)="deleteTask($event)" class="task-item round-border">
         </app-task-item>
-        <div class="create-task">
-            <mat-form-field floatLabel="never" class="full-width" appearance="none">
-                <input ngModel name="newTask" #newTask="ngModel" matInput type="text" class="caret-color" [placeholder]="newTaskPlaceholder" [(ngModel)]="newTaskValue" (click)="newTaskFocus()" (keyup.enter)="createTask()">
-                <mat-icon matSuffix class="icon-button" (click)="createTask()">add</mat-icon>
-            </mat-form-field>
+        <div>
+            <app-new-task [project]="project"></app-new-task>
         </div>
     </mat-card-content>
 </mat-card>
