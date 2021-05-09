@@ -5,5 +5,96 @@
     html, body { 
         height: 100%; 
     }
-    body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+    body { margin: 0; 
+        font-family: Roboto, "Helvetica Neue", sans-serif;}
+
 }
+
+.purple {
+    color: purple;
+}
+
+.bg-color-purple {
+    background-color: purple;
+}
+
+.bg-color-red {
+    background-color: rgb(172, 59, 59);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.round-border {
+    border-radius: 5px;
+}
+
+.cancel-container{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    .cancel-button {
+        left: 97%;
+        @media screen and (max-width: 570px) {
+            left: 90%;
+        }
+        .cancel-icon {
+            font-size: 18px;
+        }
+    }        
+}
+
+.caret-color {
+    caret-color: rgba(255, 255, 255, 0.7);
+}
+
+.alert-required {
+    color: #dc3545;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.complete-center-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+     * {
+        display: block;
+    }
+}
+
+.margin-tb-10 {
+    margin: 10px 0;
+}
+
+.margin-lr-10 {
+    margin: 0 5px;
+}
+
+.sm-margin-top-10 {
+    @media screen and (max-width: 576px) {
+        margin-top: 10px;
+    }
+}
+
+.lg-margin-top-10 {
+    @media screen and (max-width: 992px) {
+        margin-top: 10px;
+    }
+}
+
+.remove-margin {
+    margin: 0;
+}
+
+.sutile-text {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
