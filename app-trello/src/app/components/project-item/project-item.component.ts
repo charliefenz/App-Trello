@@ -27,7 +27,7 @@ export class ProjectItemComponent implements OnInit {
       autoFocus: false,
       hasBackdrop: true,
       id: 'editProjectDialog',
-      data: project});
+      data: project.id});
 
     dialogRef.afterClosed().subscribe({
       next: (res) => {
