@@ -1,12 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Project } from 'src/app/Models/project';
 import { Task } from 'src/app/Models/task';
-import { NgForm } from '@angular/forms';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
-import { EditTaskComponent } from '../edit-task/edit-task.component';
-import { formatDate } from '@angular/common';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-project-item',
@@ -52,14 +48,6 @@ export class ProjectItemComponent implements OnInit {
     console.log(task);
   }
 
-  completeTask(task: Task): void {
-    task.completed = true;
-  }
-
-  unCompleteTask(task: Task): void {
-    task.completed = false;
-  }
-
   editProject(project: Project): void {
     const dialogRef = this.dialog.open(EditProjectComponent, {
       width: '100%',
@@ -77,18 +65,10 @@ export class ProjectItemComponent implements OnInit {
     });
   }
 
-  editTask(task: Task): void {
-    const dialogRef = this.dialog.open(EditTaskComponent, {
-      autoFocus: false,
-      hasBackdrop: true,
-      id: 'editTaskDialog',
-      data: task});
-
-    dialogRef.afterClosed().subscribe((res) => {
-        if (res === 'delete') {
-          this.deleteTask(task.id);
-        }});
-    }
+  deleteTask(deleteId: number): void {
+    const index = this.project.tasks.findIndex(element => element.id === deleteId);
+    this.project.tasks.splice(index, 1);
+  }
 
   addTaskId(): number {
     if (this.project.tasks.length < 1) {
@@ -97,10 +77,5 @@ export class ProjectItemComponent implements OnInit {
     else {
       return this.project.tasks.length + 1;
     }
-  }
-
-  deleteTask(deleteId: number): void {
-    const index = this.project.tasks.findIndex(element => element.id === deleteId);
-    this.project.tasks.splice(index, 1);
   }
 }
