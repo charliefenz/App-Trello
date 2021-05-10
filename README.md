@@ -29,7 +29,7 @@ Objeto que sirve de traspaso de información entre el componente **task-item** y
 ### ProjectService
 Servicio que se encarga de gestionar todas las acciones CRUD asociadas con el objeto principal **Project**.
 #### Propiedades
-* projects: array de objetos individuales Project para guardar la información a nivel global de aplicacion.
+* projects: array de objetos individuales **Project** para guardar la información a nivel global de aplicacion.
 #### Metodos principales
 * getProjects(): devuelve el array de projects.
 * getProject(id): devuelve el proyecto asociado al parámetro id.
@@ -47,7 +47,6 @@ Servicio que se encarga de gestionar todas las acciones CRUD asociadas con el ob
 * project: objeto proyecto al que pertenece la tarea.
 * task: objeto tarea.
 #### Metodos principales
-* getTask(projectId, taskId): devuelve la tarea asociada al parámetro id de proyecto y al parámetro id de tarea.
 * createTask(projectId, inputName): crea una nueva tarea con el nombre asociado al parámetro inputName dentro del proyecto asociado al parámetro id.
 * editTask(projectId, taskId, editName, editDueDate, editPriority): cambia el nombre, la fecha de vencimiento y la prioridad de la tarea asociada al parámetro taskId dentro del proyecto asociado al parámetro projectId.
 * deleteTask(projectId, taskId): elimina la tarea asociada al parámetro taskId dentro del proyecto asociado al parámetro projectId.
