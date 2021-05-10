@@ -18,7 +18,7 @@ export class ProjectService {
     return this.projects[index];
   }
 
-  createProject = (inputTitle: string, inputDescription: string, inputDate: Date ) => {
+  createProject = (inputTitle: string, inputDescription: string, inputDate: Date): void => {
     const project: Project = {
       id: this.addProjectId(),
       title: inputTitle,
@@ -33,7 +33,6 @@ export class ProjectService {
     const index = this.findProject(projectId);
     this.projects[index].title = editTitle;
     this.projects[index].description = editDescription;
-    console.log(this.projects);
   }
 
   deleteProject(projectId: number): void {
