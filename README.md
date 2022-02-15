@@ -1,5 +1,5 @@
 # App-trello
-Ejemplo de una app con interfaz del estilo Trello para gestionar projectos y tareas con ejecuciones CRUD. La lógica se maneja desde dos objetos maestros (Proyectos y Tareas) que contienen toda la información.
+Ejemplo de una app con interfaz del estilo Trello para gestionar proyectos y tareas con ejecuciones CRUD. La lógica se maneja desde dos objetos maestros (Proyectos y Tareas) que contienen toda la información.
 Estos objetos son accesibles para todos los componentes a través de dos servicios inyectables: el servicio **ProjectService** para controlar toda la lógica de los proyectos y el servicio **TaskService** para controlar toda la lógica de las tareas.
 ## Tecnologías utilizadas
 * Angular para el desarrollo de la aplicacion.
